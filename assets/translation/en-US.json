@@ -1,0 +1,11 @@
+{
+  "connection_is_afk":"Connection is AFK",
+  "no_connection_body": "No internet connection. Check your internet connection and try again.",
+  "retry":"Retry",
+  "cancel":"Cancel",
+  "submit":"Submit",
+  "network_error":"No Internet",
+  "unknown_error":"Something went wrong",
+  "saved_user": "Saved user",
+  "no_user": "You have not saved anybody!"
+}
