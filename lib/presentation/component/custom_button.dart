@@ -51,12 +51,14 @@ class CustomOutlinedButton extends StatelessWidget {
 
 class CustomButton extends StatelessWidget {
   final VoidCallback onPressed;
+  final Widget child;
   final String title;
   final bool isDisabled;
   final double verticalPadding;
   const  CustomButton({
     Key? key,
     required this.onPressed,
+    required this.child,
     this.isDisabled = false,
     required this.title,
     this.verticalPadding=12,
