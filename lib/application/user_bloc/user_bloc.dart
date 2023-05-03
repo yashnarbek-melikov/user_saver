@@ -45,39 +45,14 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     Emitter<UserState> emit,
   ) async {
     EasyLoading.show();
-    var box = await Hive.openBox('myBox');
-    String? name;
-    UsersModel? usersModel;
-    name = await box.get("saved_users");
-    if (name != null && name.isNotEmpty) {
-      usersModel = UsersModel.fromJson(name);
-      if (usersModel != null) {
-        List<UserModel> _users = usersModel.users.toList();
-        if (_users.indexWhere(
-                (element) => element.id == _saveUser.userModel.id) ==
-            -1) {
-          _users.add(_saveUser.userModel);
-        } else {
-          _users.remove(_saveUser.userModel);
-        }
-        usersModel = UsersModel((p0) => p0..users = _users.build().toBuilder());
-      } else {
-        usersModel = UsersModel((p0) =>
-            p0..users = <UserModel>[_saveUser.userModel].build().toBuilder());
-      }
-    } else {
-      usersModel = UsersModel((p0) =>
-          p0..users = <UserModel>[_saveUser.userModel].build().toBuilder());
-    }
-    await box.put("saved_users", usersModel.toJson());
+    UsersModel usersModel = await _userRepo.saveUser(_saveUser.userModel);
     emit(state.copyWith(usersModel: usersModel));
     EasyLoading.showSuccess("success".tr());
-
     add(UserEvent.isSaved());
   }
 
   Future<void> _isSaved(_IsSaved _isSaved, Emitter<UserState> emit) async {
-    UsersModel? usersModel = await _getUsersHive();
+    UsersModel? usersModel = await _userRepo.getUsersHive();
     List<UserModel> users = List.from(state.userModel ?? []);
     if (usersModel != null) {
       List<int> index = users
@@ -94,22 +69,8 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     Emitter<UserState> emit,
   ) async {
     EasyLoading.show();
-    UsersModel? usersModel = await _getUsersHive();
+    UsersModel? usersModel = await _userRepo.getUsersHive();
     emit(state.copyWith(usersModel: usersModel));
     EasyLoading.dismiss();
-  }
-
-  Future<UsersModel?> _getUsersHive() async {
-    var box = await Hive.openBox('myBox');
-    String? name;
-    UsersModel? usersModel;
-    name = await box.get("saved_users");
-    if (name != null && name.isNotEmpty) {
-      usersModel = UsersModel.fromJson(name);
-      if (usersModel != null) {
-        return usersModel;
-      }
-    }
-    return null;
   }
 }
