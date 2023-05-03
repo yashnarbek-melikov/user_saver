@@ -20,14 +20,7 @@ class UserRepo implements UserFacade {
       final res = await _getUserService.getUsers();
       if (res.isSuccessful) {
         assert(res.body != null);
-        // List<UserModel>? userModel = UserModel.fromJson(res.bodyString);
         return right(res.body!.toList());
-        // if (userModel != null) {
-        //
-        // } else {
-        //   return left(Unknown(message: 'unknown_error'.tr()));
-        // }
-        // return right(UserModel((p0)=>p0.user=res.body!.toBuiltList().toBuilder()));
       } else {
         return left(Unknown(message: 'unknown_error'.tr()));
       }

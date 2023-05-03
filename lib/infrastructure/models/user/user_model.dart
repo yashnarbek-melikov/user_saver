@@ -62,22 +62,22 @@ abstract class UserModel implements Built<UserModel, UserModelBuilder> {
   static Serializer<UserModel> get serializer => _$userModelSerializer;
 }
 
-// abstract class UsersModel implements Built<UsersModel, UsersModelBuilder> {
-//   BuiltList<UserModel> get users;
-//
-//   UsersModel._();
-//   factory UsersModel([Function(UsersModelBuilder b) updates]) = _$UsersModel;
-//
-//   String toJson() {
-//     return json.encode(serializers.serializeWith(UsersModel.serializer, this));
-//   }
-//
-//   static UsersModel? fromJson(String jsonString) {
-//     return serializers.deserializeWith(
-//         UsersModel.serializer, json.decode(jsonString));
-//   }
-//
-//   static Serializer<UsersModel> get serializer => _$usersModelSerializer;
-// }
+abstract class UsersModel implements Built<UsersModel, UsersModelBuilder> {
+  BuiltList<UserModel> get users;
+
+  UsersModel._();
+  factory UsersModel([Function(UsersModelBuilder b) updates]) = _$UsersModel;
+
+  String toJson() {
+    return json.encode(serializers.serializeWith(UsersModel.serializer, this));
+  }
+
+  static UsersModel? fromJson(String jsonString) {
+    return serializers.deserializeWith(
+        UsersModel.serializer, json.decode(jsonString));
+  }
+
+  static Serializer<UsersModel> get serializer => _$usersModelSerializer;
+}
 
 

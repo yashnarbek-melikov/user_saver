@@ -7,6 +7,7 @@ part of 'user_model.dart';
 // **************************************************************************
 
 Serializer<UserModel> _$userModelSerializer = new _$UserModelSerializer();
+Serializer<UsersModel> _$usersModelSerializer = new _$UsersModelSerializer();
 
 class _$UserModelSerializer implements StructuredSerializer<UserModel> {
   @override
@@ -156,6 +157,49 @@ class _$UserModelSerializer implements StructuredSerializer<UserModel> {
         case 'site_admin':
           result.siteAdmin = serializers.deserialize(value,
               specifiedType: const FullType(bool))! as bool;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$UsersModelSerializer implements StructuredSerializer<UsersModel> {
+  @override
+  final Iterable<Type> types = const [UsersModel, _$UsersModel];
+  @override
+  final String wireName = 'UsersModel';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, UsersModel object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'users',
+      serializers.serialize(object.users,
+          specifiedType:
+              const FullType(BuiltList, const [const FullType(UserModel)])),
+    ];
+
+    return result;
+  }
+
+  @override
+  UsersModel deserialize(Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new UsersModelBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'users':
+          result.users.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(UserModel)]))!
+              as BuiltList<Object?>);
           break;
       }
     }
@@ -506,6 +550,95 @@ class UserModelBuilder implements Builder<UserModel, UserModelBuilder> {
             receivedEventsUrl: BuiltValueNullFieldError.checkNotNull(receivedEventsUrl, r'UserModel', 'receivedEventsUrl'),
             type: BuiltValueNullFieldError.checkNotNull(type, r'UserModel', 'type'),
             siteAdmin: BuiltValueNullFieldError.checkNotNull(siteAdmin, r'UserModel', 'siteAdmin'));
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$UsersModel extends UsersModel {
+  @override
+  final BuiltList<UserModel> users;
+
+  factory _$UsersModel([void Function(UsersModelBuilder)? updates]) =>
+      (new UsersModelBuilder()..update(updates))._build();
+
+  _$UsersModel._({required this.users}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(users, r'UsersModel', 'users');
+  }
+
+  @override
+  UsersModel rebuild(void Function(UsersModelBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  UsersModelBuilder toBuilder() => new UsersModelBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is UsersModel && users == other.users;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(0, users.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'UsersModel')..add('users', users))
+        .toString();
+  }
+}
+
+class UsersModelBuilder implements Builder<UsersModel, UsersModelBuilder> {
+  _$UsersModel? _$v;
+
+  ListBuilder<UserModel>? _users;
+  ListBuilder<UserModel> get users =>
+      _$this._users ??= new ListBuilder<UserModel>();
+  set users(ListBuilder<UserModel>? users) => _$this._users = users;
+
+  UsersModelBuilder();
+
+  UsersModelBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _users = $v.users.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(UsersModel other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$UsersModel;
+  }
+
+  @override
+  void update(void Function(UsersModelBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  UsersModel build() => _build();
+
+  _$UsersModel _build() {
+    _$UsersModel _$result;
+    try {
+      _$result = _$v ?? new _$UsersModel._(users: users.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'users';
+        users.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'UsersModel', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

@@ -31,6 +31,10 @@ class _$UserEventTearOff {
   _GetUserHistory getUserHistory() {
     return _GetUserHistory();
   }
+
+  _IsSaved isSaved() {
+    return _IsSaved();
+  }
 }
 
 /// @nodoc
@@ -43,6 +47,7 @@ mixin _$UserEvent {
     required TResult Function() getUsers,
     required TResult Function(UserModel userModel) saveUser,
     required TResult Function() getUserHistory,
+    required TResult Function() isSaved,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +55,7 @@ mixin _$UserEvent {
     TResult Function()? getUsers,
     TResult Function(UserModel userModel)? saveUser,
     TResult Function()? getUserHistory,
+    TResult Function()? isSaved,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +63,7 @@ mixin _$UserEvent {
     TResult Function()? getUsers,
     TResult Function(UserModel userModel)? saveUser,
     TResult Function()? getUserHistory,
+    TResult Function()? isSaved,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -65,6 +72,7 @@ mixin _$UserEvent {
     required TResult Function(_GetUsers value) getUsers,
     required TResult Function(_SaveUser value) saveUser,
     required TResult Function(_GetUserHistory value) getUserHistory,
+    required TResult Function(_IsSaved value) isSaved,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,6 +80,7 @@ mixin _$UserEvent {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_SaveUser value)? saveUser,
     TResult Function(_GetUserHistory value)? getUserHistory,
+    TResult Function(_IsSaved value)? isSaved,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -79,6 +88,7 @@ mixin _$UserEvent {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_SaveUser value)? saveUser,
     TResult Function(_GetUserHistory value)? getUserHistory,
+    TResult Function(_IsSaved value)? isSaved,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -140,6 +150,7 @@ class _$_GetUsers implements _GetUsers {
     required TResult Function() getUsers,
     required TResult Function(UserModel userModel) saveUser,
     required TResult Function() getUserHistory,
+    required TResult Function() isSaved,
   }) {
     return getUsers();
   }
@@ -150,6 +161,7 @@ class _$_GetUsers implements _GetUsers {
     TResult Function()? getUsers,
     TResult Function(UserModel userModel)? saveUser,
     TResult Function()? getUserHistory,
+    TResult Function()? isSaved,
   }) {
     return getUsers?.call();
   }
@@ -160,6 +172,7 @@ class _$_GetUsers implements _GetUsers {
     TResult Function()? getUsers,
     TResult Function(UserModel userModel)? saveUser,
     TResult Function()? getUserHistory,
+    TResult Function()? isSaved,
     required TResult orElse(),
   }) {
     if (getUsers != null) {
@@ -174,6 +187,7 @@ class _$_GetUsers implements _GetUsers {
     required TResult Function(_GetUsers value) getUsers,
     required TResult Function(_SaveUser value) saveUser,
     required TResult Function(_GetUserHistory value) getUserHistory,
+    required TResult Function(_IsSaved value) isSaved,
   }) {
     return getUsers(this);
   }
@@ -184,6 +198,7 @@ class _$_GetUsers implements _GetUsers {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_SaveUser value)? saveUser,
     TResult Function(_GetUserHistory value)? getUserHistory,
+    TResult Function(_IsSaved value)? isSaved,
   }) {
     return getUsers?.call(this);
   }
@@ -194,6 +209,7 @@ class _$_GetUsers implements _GetUsers {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_SaveUser value)? saveUser,
     TResult Function(_GetUserHistory value)? getUserHistory,
+    TResult Function(_IsSaved value)? isSaved,
     required TResult orElse(),
   }) {
     if (getUsers != null) {
@@ -272,6 +288,7 @@ class _$_SaveUser implements _SaveUser {
     required TResult Function() getUsers,
     required TResult Function(UserModel userModel) saveUser,
     required TResult Function() getUserHistory,
+    required TResult Function() isSaved,
   }) {
     return saveUser(userModel);
   }
@@ -282,6 +299,7 @@ class _$_SaveUser implements _SaveUser {
     TResult Function()? getUsers,
     TResult Function(UserModel userModel)? saveUser,
     TResult Function()? getUserHistory,
+    TResult Function()? isSaved,
   }) {
     return saveUser?.call(userModel);
   }
@@ -292,6 +310,7 @@ class _$_SaveUser implements _SaveUser {
     TResult Function()? getUsers,
     TResult Function(UserModel userModel)? saveUser,
     TResult Function()? getUserHistory,
+    TResult Function()? isSaved,
     required TResult orElse(),
   }) {
     if (saveUser != null) {
@@ -306,6 +325,7 @@ class _$_SaveUser implements _SaveUser {
     required TResult Function(_GetUsers value) getUsers,
     required TResult Function(_SaveUser value) saveUser,
     required TResult Function(_GetUserHistory value) getUserHistory,
+    required TResult Function(_IsSaved value) isSaved,
   }) {
     return saveUser(this);
   }
@@ -316,6 +336,7 @@ class _$_SaveUser implements _SaveUser {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_SaveUser value)? saveUser,
     TResult Function(_GetUserHistory value)? getUserHistory,
+    TResult Function(_IsSaved value)? isSaved,
   }) {
     return saveUser?.call(this);
   }
@@ -326,6 +347,7 @@ class _$_SaveUser implements _SaveUser {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_SaveUser value)? saveUser,
     TResult Function(_GetUserHistory value)? getUserHistory,
+    TResult Function(_IsSaved value)? isSaved,
     required TResult orElse(),
   }) {
     if (saveUser != null) {
@@ -387,6 +409,7 @@ class _$_GetUserHistory implements _GetUserHistory {
     required TResult Function() getUsers,
     required TResult Function(UserModel userModel) saveUser,
     required TResult Function() getUserHistory,
+    required TResult Function() isSaved,
   }) {
     return getUserHistory();
   }
@@ -397,6 +420,7 @@ class _$_GetUserHistory implements _GetUserHistory {
     TResult Function()? getUsers,
     TResult Function(UserModel userModel)? saveUser,
     TResult Function()? getUserHistory,
+    TResult Function()? isSaved,
   }) {
     return getUserHistory?.call();
   }
@@ -407,6 +431,7 @@ class _$_GetUserHistory implements _GetUserHistory {
     TResult Function()? getUsers,
     TResult Function(UserModel userModel)? saveUser,
     TResult Function()? getUserHistory,
+    TResult Function()? isSaved,
     required TResult orElse(),
   }) {
     if (getUserHistory != null) {
@@ -421,6 +446,7 @@ class _$_GetUserHistory implements _GetUserHistory {
     required TResult Function(_GetUsers value) getUsers,
     required TResult Function(_SaveUser value) saveUser,
     required TResult Function(_GetUserHistory value) getUserHistory,
+    required TResult Function(_IsSaved value) isSaved,
   }) {
     return getUserHistory(this);
   }
@@ -431,6 +457,7 @@ class _$_GetUserHistory implements _GetUserHistory {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_SaveUser value)? saveUser,
     TResult Function(_GetUserHistory value)? getUserHistory,
+    TResult Function(_IsSaved value)? isSaved,
   }) {
     return getUserHistory?.call(this);
   }
@@ -441,6 +468,7 @@ class _$_GetUserHistory implements _GetUserHistory {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_SaveUser value)? saveUser,
     TResult Function(_GetUserHistory value)? getUserHistory,
+    TResult Function(_IsSaved value)? isSaved,
     required TResult orElse(),
   }) {
     if (getUserHistory != null) {
@@ -455,12 +483,131 @@ abstract class _GetUserHistory implements UserEvent {
 }
 
 /// @nodoc
+abstract class _$IsSavedCopyWith<$Res> {
+  factory _$IsSavedCopyWith(_IsSaved value, $Res Function(_IsSaved) then) =
+      __$IsSavedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$IsSavedCopyWithImpl<$Res> extends _$UserEventCopyWithImpl<$Res>
+    implements _$IsSavedCopyWith<$Res> {
+  __$IsSavedCopyWithImpl(_IsSaved _value, $Res Function(_IsSaved) _then)
+      : super(_value, (v) => _then(v as _IsSaved));
+
+  @override
+  _IsSaved get _value => super._value as _IsSaved;
+}
+
+/// @nodoc
+
+class _$_IsSaved implements _IsSaved {
+  _$_IsSaved();
+
+  @override
+  String toString() {
+    return 'UserEvent.isSaved()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _IsSaved);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getUsers,
+    required TResult Function(UserModel userModel) saveUser,
+    required TResult Function() getUserHistory,
+    required TResult Function() isSaved,
+  }) {
+    return isSaved();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? getUsers,
+    TResult Function(UserModel userModel)? saveUser,
+    TResult Function()? getUserHistory,
+    TResult Function()? isSaved,
+  }) {
+    return isSaved?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getUsers,
+    TResult Function(UserModel userModel)? saveUser,
+    TResult Function()? getUserHistory,
+    TResult Function()? isSaved,
+    required TResult orElse(),
+  }) {
+    if (isSaved != null) {
+      return isSaved();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetUsers value) getUsers,
+    required TResult Function(_SaveUser value) saveUser,
+    required TResult Function(_GetUserHistory value) getUserHistory,
+    required TResult Function(_IsSaved value) isSaved,
+  }) {
+    return isSaved(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_GetUsers value)? getUsers,
+    TResult Function(_SaveUser value)? saveUser,
+    TResult Function(_GetUserHistory value)? getUserHistory,
+    TResult Function(_IsSaved value)? isSaved,
+  }) {
+    return isSaved?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetUsers value)? getUsers,
+    TResult Function(_SaveUser value)? saveUser,
+    TResult Function(_GetUserHistory value)? getUserHistory,
+    TResult Function(_IsSaved value)? isSaved,
+    required TResult orElse(),
+  }) {
+    if (isSaved != null) {
+      return isSaved(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _IsSaved implements UserEvent {
+  factory _IsSaved() = _$_IsSaved;
+}
+
+/// @nodoc
 class _$UserStateTearOff {
   const _$UserStateTearOff();
 
-  _SignInState call({List<UserModel>? userModel = null}) {
+  _SignInState call(
+      {List<UserModel>? userModel = null,
+      UsersModel? usersModel = null,
+      List<int> intList = const []}) {
     return _SignInState(
       userModel: userModel,
+      usersModel: usersModel,
+      intList: intList,
     );
   }
 }
@@ -471,6 +618,8 @@ const $UserState = _$UserStateTearOff();
 /// @nodoc
 mixin _$UserState {
   List<UserModel>? get userModel => throw _privateConstructorUsedError;
+  UsersModel? get usersModel => throw _privateConstructorUsedError;
+  List<int> get intList => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $UserStateCopyWith<UserState> get copyWith =>
@@ -481,7 +630,8 @@ mixin _$UserState {
 abstract class $UserStateCopyWith<$Res> {
   factory $UserStateCopyWith(UserState value, $Res Function(UserState) then) =
       _$UserStateCopyWithImpl<$Res>;
-  $Res call({List<UserModel>? userModel});
+  $Res call(
+      {List<UserModel>? userModel, UsersModel? usersModel, List<int> intList});
 }
 
 /// @nodoc
@@ -495,12 +645,22 @@ class _$UserStateCopyWithImpl<$Res> implements $UserStateCopyWith<$Res> {
   @override
   $Res call({
     Object? userModel = freezed,
+    Object? usersModel = freezed,
+    Object? intList = freezed,
   }) {
     return _then(_value.copyWith(
       userModel: userModel == freezed
           ? _value.userModel
           : userModel // ignore: cast_nullable_to_non_nullable
               as List<UserModel>?,
+      usersModel: usersModel == freezed
+          ? _value.usersModel
+          : usersModel // ignore: cast_nullable_to_non_nullable
+              as UsersModel?,
+      intList: intList == freezed
+          ? _value.intList
+          : intList // ignore: cast_nullable_to_non_nullable
+              as List<int>,
     ));
   }
 }
@@ -511,7 +671,8 @@ abstract class _$SignInStateCopyWith<$Res> implements $UserStateCopyWith<$Res> {
           _SignInState value, $Res Function(_SignInState) then) =
       __$SignInStateCopyWithImpl<$Res>;
   @override
-  $Res call({List<UserModel>? userModel});
+  $Res call(
+      {List<UserModel>? userModel, UsersModel? usersModel, List<int> intList});
 }
 
 /// @nodoc
@@ -527,12 +688,22 @@ class __$SignInStateCopyWithImpl<$Res> extends _$UserStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? userModel = freezed,
+    Object? usersModel = freezed,
+    Object? intList = freezed,
   }) {
     return _then(_SignInState(
       userModel: userModel == freezed
           ? _value.userModel
           : userModel // ignore: cast_nullable_to_non_nullable
               as List<UserModel>?,
+      usersModel: usersModel == freezed
+          ? _value.usersModel
+          : usersModel // ignore: cast_nullable_to_non_nullable
+              as UsersModel?,
+      intList: intList == freezed
+          ? _value.intList
+          : intList // ignore: cast_nullable_to_non_nullable
+              as List<int>,
     ));
   }
 }
@@ -540,15 +711,22 @@ class __$SignInStateCopyWithImpl<$Res> extends _$UserStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_SignInState implements _SignInState {
-  const _$_SignInState({this.userModel = null});
+  const _$_SignInState(
+      {this.userModel = null, this.usersModel = null, this.intList = const []});
 
   @JsonKey()
   @override
   final List<UserModel>? userModel;
+  @JsonKey()
+  @override
+  final UsersModel? usersModel;
+  @JsonKey()
+  @override
+  final List<int> intList;
 
   @override
   String toString() {
-    return 'UserState(userModel: $userModel)';
+    return 'UserState(userModel: $userModel, usersModel: $usersModel, intList: $intList)';
   }
 
   @override
@@ -556,12 +734,18 @@ class _$_SignInState implements _SignInState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _SignInState &&
-            const DeepCollectionEquality().equals(other.userModel, userModel));
+            const DeepCollectionEquality().equals(other.userModel, userModel) &&
+            const DeepCollectionEquality()
+                .equals(other.usersModel, usersModel) &&
+            const DeepCollectionEquality().equals(other.intList, intList));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(userModel));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(userModel),
+      const DeepCollectionEquality().hash(usersModel),
+      const DeepCollectionEquality().hash(intList));
 
   @JsonKey(ignore: true)
   @override
@@ -570,10 +754,17 @@ class _$_SignInState implements _SignInState {
 }
 
 abstract class _SignInState implements UserState {
-  const factory _SignInState({List<UserModel>? userModel}) = _$_SignInState;
+  const factory _SignInState(
+      {List<UserModel>? userModel,
+      UsersModel? usersModel,
+      List<int> intList}) = _$_SignInState;
 
   @override
   List<UserModel>? get userModel;
+  @override
+  UsersModel? get usersModel;
+  @override
+  List<int> get intList;
   @override
   @JsonKey(ignore: true)
   _$SignInStateCopyWith<_SignInState> get copyWith =>

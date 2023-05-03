@@ -11,4 +11,5 @@ abstract class UserEvent with _$UserEvent {
 
   factory UserEvent.getUserHistory() = _GetUserHistory;
 
+  factory UserEvent.isSaved() = _IsSaved;
 }

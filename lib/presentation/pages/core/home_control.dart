@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:user_saver/application/user_bloc/user_bloc.dart';
 import 'package:user_saver/infrastructure/apis/user_apis.dart';
+import 'package:user_saver/infrastructure/models/user/user_model.dart';
 import 'package:user_saver/infrastructure/repositories/user_repo.dart';
 
 import '../../../infrastructure/services/connectivity.dart';
@@ -34,15 +35,16 @@ class _HomeControlState extends State<HomeControl> {
             return (snap.data?[0] != ConnectivityResult.none)
                 ? BlocProvider(
                     create: (_) => UserBloc(UserRepo(GetUserService.create()))
-                      ..add(UserEvent.getUsers()),
+                      ..add(UserEvent.getUsers())..add(UserEvent.getUserHistory()),
                     child: const HomePage())
                 : const NoConnection();
           } else {
-            return const ScaffoldMessenger(
-              child: SnackBar(
-                content: Text('connecting network...'),
-              ),
-            );
+            return const SizedBox();
+            //   const ScaffoldMessenger(
+            //   child: SnackBar(
+            //     content: Text('connecting network...'),
+            //   ),
+            // );
           }
         });
   }
